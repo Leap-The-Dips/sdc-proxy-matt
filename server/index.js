@@ -12,14 +12,14 @@ app.use('/images', proxy('http://fec-matt-dev.us-east-2.elasticbeanstalk.com/', 
   }
 }));
 
-app.use('/reviews', proxy('http://3.17.191.227:3004/', {
+app.use('/reviews', proxy('http://localhost:3004/', {
   proxyReqPathResolver: function (req) {
     var path = req.url.split('/')[1];
     return `/reviews${path}`;
   }
 }));
 
-app.use('/ratings', proxy('http://3.17.191.227:3004/', {
+app.use('/ratings', proxy('http://localhost:3004/', {
   proxyReqPathResolver: function (req) {
     var path = req.url.split('/')[1];
     return `/ratings${path}`;
